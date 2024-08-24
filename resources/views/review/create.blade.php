@@ -23,8 +23,8 @@
                 value="{{ old('comment') }}" /> 
                 <input type="text" class="form-control mb-2" placeholder="Enter game" name="game" 
                 value="{{ old('game') }}" /> 
-                <input type="text" class="form-control mb-2" placeholder="Enter user" name="user" 
-                value="{{ old('user') }}" /> 
+                <input type="text" class="form-control mb-2" placeholder="Enter client" name="client" 
+                value="{{ old('client') }}" /> 
                 <input type="submit" class="btn btn-primary" value="Send" /> 
                 </form> 
             </div> 

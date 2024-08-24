@@ -10,10 +10,10 @@
         <div class="col-md-8"> 
         <div class="card-body"> 
             <h5 class="card-title"> 
-            {{ $viewData["review"]["user"] }} 
+            {{ $viewData["review"]["client"] }} 
             </h5> 
             <p class="card-text"><small class="text-muted">{{ $viewData["review"]["game"] }}</small></p>
-            <p class="card-text">{{ $viewData["review"]["comment"] }}<small class="text-muted">({{ $viewData["review"]["rating"] }} stars)</small></p>
+            <p class="card-text">{{ $viewData["review"]["comment"] }}<small class="text-muted"> ({{ $viewData["review"]["rating"] }} stars)</small></p>
             <p class="card-text"><small class="text-muted">{{ $viewData["review"]["date"] }}</small></p>
         </div> 
         </div> 
