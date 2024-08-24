@@ -32,4 +32,24 @@ class ReviewController extends Controller
         $viewData["review"] = $review;
         return view('review.show')->with("viewData", $viewData);
     }
+
+    public function create(): View 
+    { 
+        $viewData = []; //to be sent to the view 
+        $viewData["title"] = "Create review"; 
+ 
+        return view('review.create')->with("viewData",$viewData); 
+    } 
+ 
+    public function save(Request $request) 
+    { 
+        $request->validate([ 
+            "rating" => "required|numeric|min:1|max:5",
+            "comment" => "required|max:500",
+            "game" => "required",
+            "user" => "required"
+        ]); 
+        dd($request->all()); 
+        //here will be the code to call the model and save it to the database 
+    } 
 }

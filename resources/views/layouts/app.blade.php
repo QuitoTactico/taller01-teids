@@ -22,7 +22,7 @@
                     <div class="navbar-nav ms-auto">
                         <a class="nav-link active" href="{{ route('home.index') }}">Home</a>
                         <a class="nav-link active" href="{{ route('review.index') }}">Reviews</a>
-                        <a class="nav-link active" href="#">Create</a>
+                        <a class="nav-link active" href="{{ route('review.create') }}">Create</a>
                     </div>
                 </div>
             </div>
