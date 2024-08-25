@@ -12,9 +12,10 @@
             <h5 class="card-title"> 
             {{ $viewData["review"]["client"] }} 
             </h5> 
-            <p class="card-text"><small class="text-muted">{{ $viewData["review"]["game"] }}</small></p>
+            <p class="card-text"><small class="text-muted">About {{ $viewData["review"]["game"] }}</small></p>
             <p class="card-text">{{ $viewData["review"]["comment"] }}<small class="text-muted"> ({{ $viewData["review"]["rating"] }} stars)</small></p>
-            <p class="card-text"><small class="text-muted">{{ $viewData["review"]["date"] }}</small></p>
+            <p class="card-text"><small class="text-muted">Created at: {{ $viewData["review"]["created_at"] }}</small></p>
+            <p class="card-text"><small class="text-muted">Updated at: {{ $viewData["review"]["updated_at"] }}</small></p>
         </div> 
         </div> 
     </div> 
