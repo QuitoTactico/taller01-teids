@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Review;
+use Illuminate\Http\RedirectResponse;
 
 class ReviewController extends Controller
 {
@@ -18,13 +19,13 @@ class ReviewController extends Controller
         return view('review.index')->with('viewData', $viewData);
     }
 
-    public function show(string $id): View
+    public function show(string $id): View|RedirectResponse
     {
         $viewData = [];
         try {
             $review = Review::findOrFail($id);
         } catch (\Exception $e) {
-            return redirect()->route('home.index');
+            return redirect()->route('review.nonexistent');
         }
         $viewData['title'] = 'Review #'.$id.' - PIXEL PLAZA';
         $viewData['subtitle'] = 'Review #'.$id.' - Review information';
@@ -41,7 +42,7 @@ class ReviewController extends Controller
         return view('review.create')->with('viewData', $viewData);
     }
 
-    public function save(Request $request)
+    public function save(Request $request) : RedirectResponse
     {
         $request->validate([
             'rating' => 'required|numeric|min:1|max:5',
@@ -49,7 +50,27 @@ class ReviewController extends Controller
             'game' => 'required',
             'client' => 'required',
         ]);
-        dd($request->all());
-        //here will be the code to call the model and save it to the database
+        
+        Review::create($request->only(['rating', 'comment', 'game', 'client']));
+
+        return redirect()->route('review.success');
+    }
+
+    public function success(): View
+    {
+        $viewData = [];
+        $viewData['title'] = 'Review created successfully';
+        $viewData['subtitle'] = 'Review created successfully';
+
+        return view('review.success')->with('viewData', $viewData);
+    }
+
+    public function nonexistent(): View
+    {
+        $viewData = [];
+        $viewData['title'] = 'Review not found';
+        $viewData['subtitle'] = 'Review not found';
+
+        return view('review.nonexistent')->with('viewData', $viewData);
     }
 }

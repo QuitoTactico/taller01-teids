@@ -10,4 +10,8 @@ Route::get('/reviews/create', 'App\Http\Controllers\ReviewController@create')->n
 
 Route::post('/reviews/save', 'App\Http\Controllers\ReviewController@save')->name('review.save');
 
+Route::get('/reviews/success', 'App\Http\Controllers\ReviewController@success')->name('review.success');
+
+Route::get('/reviews/nonexistent', 'App\Http\Controllers\ReviewController@nonexistent')->name('review.nonexistent');
+
 Route::get('/reviews/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');
