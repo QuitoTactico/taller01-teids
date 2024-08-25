@@ -16,16 +16,16 @@
                 @endif 
     
                 <form method="POST" action="{{ route('review.save') }}"> 
-                @csrf 
-                <input type="number" class="form-control mb-2" placeholder="Enter rating (1-5)" name="rating" 
-                value="{{ old('rating') }}" min="1" max="5" />
-                <input type="text" class="form-control mb-2" placeholder="Enter comment" name="comment" 
-                value="{{ old('comment') }}" /> 
-                <input type="text" class="form-control mb-2" placeholder="Enter game" name="game" 
-                value="{{ old('game') }}" /> 
-                <input type="text" class="form-control mb-2" placeholder="Enter client" name="client" 
-                value="{{ old('client') }}" /> 
-                <input type="submit" class="btn btn-primary" value="Send" /> 
+                    @csrf 
+                    <input type="number" class="form-control mb-2" placeholder="Enter rating (1-5)" name="rating" 
+                    value="{{ old('rating') }}" min="1" max="5" />
+                    <input type="text" class="form-control mb-2" placeholder="Enter comment" name="comment" 
+                    value="{{ old('comment') }}" /> 
+                    <input type="text" class="form-control mb-2" placeholder="Enter game" name="game" 
+                    value="{{ old('game') }}" /> 
+                    <input type="text" class="form-control mb-2" placeholder="Enter client" name="client" 
+                    value="{{ old('client') }}" /> 
+                    <input type="submit" class="btn btn-primary" value="Send" /> 
                 </form> 
             </div> 
             </div> 

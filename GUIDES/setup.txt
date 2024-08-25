@@ -1,0 +1,55 @@
+----- ESPAÑOL -----
+
+Instala XAMPP y configura PHP si aún no lo has hecho.
+
+Instala Composer si aún no lo has hecho.
+
+Instala Laravel si aún no lo has hecho.
+
+Coloca la carpeta del proyecto en la carpeta htdocs de XAMPP, "C:\xampp\htdocs".
+
+Ejecuta XAMPP.
+
+Inicia Apache y MySQL.
+
+Abre PHPmyAdmin en tu navegador, http://127.0.0.1:8000/phpmyadmin (o presiona el botón admin al lado de MySQL en XAMPP).
+
+En PHPmyAdmin, crea una base de datos llamada "taller01-teids", sin contraseña, en utf8_general_ci, usuario root.
+(Si cambias alguno de estos datos, modifica el archivo .env en la carpeta del proyecto para que coinicida con tu configuración).
+
+Corre los siguientes comandos en la terminal de la carpeta del proyecto:
+
+php artisan migrate
+php artisan db:seed
+php artisan serve
+
+Ve a http://127.0.0.1:8000, deberías de poder ver el proyecto en funcionamiento.
+
+
+
+----- ENGLISH -----
+
+Install XAMPP and configure PHP if you haven't done so yet.
+
+Install Composer if you haven't done so yet.
+
+Install Laravel if you haven't done so yet.
+
+Place the project folder in the htdocs folder of XAMPP, "C:\xampp\htdocs".
+
+Run XAMPP.
+
+Start Apache and MySQL.
+
+Open PHPmyAdmin in your browser at http://127.0.0.1:8000/phpmyadmin (or press the admin button next to MySQL in XAMPP).
+
+In PHPmyAdmin, create a database named "taller01-teids" with no password, in utf8_general_ci, user root. (If you change any of these details, modify the .env file in the project folder to match your configuration).
+
+Run the following commands in the terminal from the project folder:
+
+php artisan migrate
+php artisan db
+
+php artisan serve
+
+Go to http://127.0.0.1:8000, you should be able to see the project running.
