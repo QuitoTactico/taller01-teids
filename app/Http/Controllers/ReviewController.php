@@ -73,4 +73,15 @@ class ReviewController extends Controller
 
         return view('review.nonexistent')->with('viewData', $viewData);
     }
+
+    public function destroy(string $id): RedirectResponse // according to RESTful conventions
+    {
+        try {
+            Review::findOrFail($id)->delete();
+        } catch (\Exception $e) {
+            return redirect()->route('review.nonexistent');
+        }
+
+        return redirect()->route('review.index');
+    }
 }

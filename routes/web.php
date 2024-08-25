@@ -15,3 +15,5 @@ Route::get('/reviews/success', 'App\Http\Controllers\ReviewController@success')-
 Route::get('/reviews/nonexistent', 'App\Http\Controllers\ReviewController@nonexistent')->name('review.nonexistent');
 
 Route::get('/reviews/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');
+
+Route::delete('/reviews/{id}', 'App\Http\Controllers\ReviewController@destroy')->name('review.destroy');
