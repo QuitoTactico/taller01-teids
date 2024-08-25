@@ -17,7 +17,6 @@ class Review extends Model
      * $this->attributes['client'] - string - contains the client name
      * $this->attributes['game'] - string - contains the game name
      */
-
     protected $fillable = ['rating', 'comment', 'client', 'game'];
 
     public function getId(): int

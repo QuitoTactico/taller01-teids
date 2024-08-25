@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\View\View;
 use App\Models\Review;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ReviewController extends Controller
 {
@@ -42,7 +42,7 @@ class ReviewController extends Controller
         return view('review.create')->with('viewData', $viewData);
     }
 
-    public function save(Request $request) : RedirectResponse
+    public function save(Request $request): RedirectResponse
     {
         $request->validate([
             'rating' => 'required|numeric|min:1|max:5',
@@ -50,7 +50,7 @@ class ReviewController extends Controller
             'game' => 'required',
             'client' => 'required',
         ]);
-        
+
         Review::create($request->only(['rating', 'comment', 'game', 'client']));
 
         return redirect()->route('review.success');
